@@ -34,7 +34,7 @@ pub struct Take<'info> {
         init_if_needed,
         payer = taker,
         associated_token::mint = mint_b, 
-        associated_token::authority = taker
+        associated_token::authority = maker
     )]
     pub maker_ata_b: Account<'info, TokenAccount>,
     #[account(
@@ -49,7 +49,7 @@ pub struct Take<'info> {
     #[account(
         mut,
         associated_token::mint = mint_a, 
-        associated_token::authority = taker
+        associated_token::authority = escrow
     )]
     pub vault: Account<'info, TokenAccount>,
     pub associated_token_program: Program<'info, AssociatedToken>,

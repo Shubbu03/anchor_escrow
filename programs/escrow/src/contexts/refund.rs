@@ -29,8 +29,7 @@ pub struct Refund<'info> {
     )]
     pub escrow: Account<'info, Escrow>,
     #[account(
-        init,
-        payer = maker,
+        mut,
         associated_token::mint = mint_a,
         associated_token::authority = escrow
     )]
